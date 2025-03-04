@@ -69,6 +69,11 @@
 	</dependencies>
 
 	<build>
+	
+		<finalName>
+			rsmensage
+		</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
