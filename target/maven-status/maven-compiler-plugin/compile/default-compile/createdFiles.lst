@@ -1,0 +1,8 @@
+com\rsmensage\rsmensage\model\Mensagem.class
+com\rsmensage\rsmensage\RsmensageApplication$1.class
+com\rsmensage\rsmensage\config\CorsConfig.class
+com\rsmensage\rsmensage\config\CorsConfig$1.class
+com\rsmensage\rsmensage\controller\MensagemController.class
+com\rsmensage\rsmensage\RsmensageApplication.class
+com\rsmensage\rsmensage\repository\MensagemRepository.class
+com\rsmensage\rsmensage\service\MensagemService.class
