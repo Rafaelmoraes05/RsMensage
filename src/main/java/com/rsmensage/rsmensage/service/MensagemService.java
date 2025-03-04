@@ -16,13 +16,14 @@ public class MensagemService {
     private MensagemRepository mensagemRepository;
 
     public Mensagem getMensagemDoDia() {
-    Mensagem mensagem = mensagemRepository.findFirstByLidaFalse();
-    if (mensagem != null) {
+        Mensagem mensagem = mensagemRepository.findFirstByLidaFalse();
+        if (mensagem == null) {
+            throw new RuntimeException("Não há mensagens disponíveis.");
+        }
         mensagem.setLida(true);
-        mensagem.setDataLeitura(LocalDate.now()); // Usando LocalDate
+        mensagem.setDataLeitura(LocalDate.now());
         mensagemRepository.save(mensagem);
-    }
-    return mensagem;
+        return mensagem;
     }
 
     public List<Mensagem> getMensagensLidas() {
@@ -37,7 +38,7 @@ public class MensagemService {
         Mensagem msg = mensagemRepository.findById(mensagem.getId())
                 .orElseThrow(() -> new RuntimeException("Mensagem não encontrada"));
 
-        msg.setLida(true); // Marcar como lida
+        msg.setLida(true);
         mensagemRepository.save(msg);
     }
 }
